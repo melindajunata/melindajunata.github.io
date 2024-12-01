@@ -1,0 +1,190 @@
+:root {
+    /* -----------------------------------------------------------------------------
+     * COLORS: BASE
+     * -------------------------------------------------------------------------- */
+    --cl-off-black: #222222; 
+    --cl-dark-grey: #454545;
+    --cl-medium-grey: #A1A1A1;
+    --cl-medium-light-grey: #f5f5f5;  
+    --cl-light-grey: #fafafa;   
+
+
+    /* -----------------------------------------------------------------------------
+     * COLORS: SEMANTIC
+     * -------------------------------------------------------------------------- */
+    --cl-text-heading: var(--cl-off-black);   /* all headings */
+    --cl-text-body: var(--cl-dark-grey);   /* main text color */
+    --cl-text-secondary: var(--cl-medium-grey); /* secondary or complimentary text color */
+
+    --cl-bg-primary: var(--cl-light-grey);    /* main background */
+    --cl-bg-banner-info: var(--cl-medium-light-grey);    /* info banner */
+
+
+    /* -----------------------------------------------------------------------------
+     * TYPOGRAPHY
+     * -------------------------------------------------------------------------- */
+    
+    /* ff: font-family */
+    --ff-base: 'Inter', sans-serif;
+    
+    /* fs: font-size */
+    --fs-h1: 48px;              /* page title */
+    --fs-section-title-1: 24px; 
+    --fs-section-title-2: 20px;  /* section headers */
+    --fs-body-1: 18px;          /* main text */
+    --fs-body-2: 16px; 
+    --fs-caption: 14px;
+    
+    /* lh: line-height */
+    --lh-heading: 120%;
+    --lh-body: 140%;
+}
+
+
+/* -----------------------------------------------------------------------------
+ * HEADINGS
+ * -------------------------------------------------------------------------- */
+
+.page-title {
+    font-family: var(--ff-base);
+    font-size: var(--fs-h1);
+    line-height: var(--lh-heading);
+    font-weight: 600;
+    color: var(--cl-text-heading);
+}
+
+.section-title {
+    font-family: var(--ff-base);
+    font-size: var(--fs-section-title-1);
+    line-height: var(--lh-heading);
+    font-weight: 600;
+    color: var(--cl-text-heading);
+}
+
+
+/* -----------------------------------------------------------------------------
+ * BODY TEXT
+ * -------------------------------------------------------------------------- */
+
+p {
+    font-family: var(--ff-base);
+    font-size: var(--fs-body-1);
+    line-height: var(--lh-body);
+    font-weight: 400;
+    color: var(--cl-text-body);
+    margin: 0;
+}
+
+.secondary {
+    color: var(--cl-text-secondary)
+}
+
+a {
+    color: #0066cc;
+}
+
+/* -----------------------------------------------------------------------------
+ * LAYOUT
+ * -------------------------------------------------------------------------- */
+
+body {
+    margin: 0;
+    background-color: var(--cl-bg-primary);
+}
+
+.container-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 24px;
+    min-height: 100vh;
+    width: auto;
+    }
+
+.content-wrap {
+    display: flex;
+    flex-direction: column;
+    max-width: 525px;
+    gap: 24px;
+}
+
+.stacks-s {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.stacks-m {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.horizontal-stack {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    flex-wrap: wrap; 
+    justify-content: center; 
+}
+
+/* -----------------------------------------------------------------------------
+ * FOOTER
+ * -------------------------------------------------------------------------- */
+
+ footer {
+    padding: 24px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+ footer p {
+    font-size: var(--fs-caption);
+}
+
+/* -----------------------------------------------------------------------------
+ * RESPONSIVENESS
+ * -------------------------------------------------------------------------- */
+
+@media (max-width: 500px) { 
+    .container-center {
+        min-height: auto;  /* removes 100vh height */
+        padding: 24px;  /* 40px top/bottom, keeps 24px left/right */
+    }
+
+    .content-wrap {
+        justify-content: flex-start;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .horizontal-stack {
+        justify-content: flex-start;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+    
+    /* Hide the dot separator on small screens */
+    .horizontal-stack p:nth-child(2) {
+        display: none;
+    }
+
+    .section-title {
+        font-size: var(--fs-section-title-2);
+    }
+    
+    p {
+        font-size: var(--fs-body-2);
+    }
+
+    .stacks-m {
+        gap: 16px;
+    }
+}
