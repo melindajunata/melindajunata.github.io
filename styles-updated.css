@@ -160,7 +160,7 @@ body {
 }
 
 body {
-    animation: pageLoad 1.5s cubic-bezier(0.44, 0, 0.56, 1);
+    animation: pageLoad 0.8s cubic-bezier(0.44, 0, 0.56, 1);
 }
 
 /* -----------------------------------------------------------------------------
